@@ -1,0 +1,23 @@
+{
+  "name": "sriwedsramz2026",
+  "version": "5.0.0",
+  "description": "Sriram & Ramani Wedding Platform — Production Full-Stack",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site — no build step'",
+    "lint": "eslint api/ lib/",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "sharp": "^0.33.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  }
+}
