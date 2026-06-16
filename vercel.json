@@ -3,14 +3,7 @@
   "framework": null,
   "buildCommand": null,
   "outputDirectory": ".",
-  "functions": {
-  "api/*/.js": {
-    "maxDuration": 15
-  },
-  "api/upload.js": {
-    "maxDuration": 30
-  }
-},
+  "functions": {},
   "rewrites": [
     {
       "source": "/api/:path*",
