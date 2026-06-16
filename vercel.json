@@ -3,7 +3,6 @@
   "framework": null,
   "buildCommand": null,
   "outputDirectory": ".",
-  "functions": {},
   "rewrites": [
     {
       "source": "/api/:path*",
