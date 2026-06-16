@@ -4,17 +4,13 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "functions": {
-    "api/**/*.js": {
-      "runtime": "nodejs18.x",
-      "maxDuration": 15,
-      "memory": 512
-    },
-    "api/upload.js": {
-      "runtime": "nodejs18.x",
-      "maxDuration": 30,
-      "memory": 1024
-    }
+  "api/*/.js": {
+    "maxDuration": 15
   },
+  "api/upload.js": {
+    "maxDuration": 30
+  }
+},
   "rewrites": [
     {
       "source": "/api/:path*",
