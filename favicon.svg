@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description><dc:creator>RealFaviconGenerator</dc:creator><dc:source>https://realfavicongenerator.net</dc:source></rdf:Description></rdf:RDF></metadata><rect width="32" height="32" fill="#ffffff"></rect><circle cx="12" cy="13" r="5.5" fill="none" stroke="url(#gold1)" stroke-width="2.2"></circle><circle cx="20" cy="13" r="5.5" fill="none" stroke="url(#gold2)" stroke-width="2.2"></circle><text x="16" y="27" font-family="Georgia, serif" font-size="7.5" font-weight="bold" fill="url(#goldText)" text-anchor="middle" letter-spacing="0.3">S&amp;R</text><defs>
+    <linearGradient id="gold1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c9a84c"></stop>
+      <stop offset="50%" stop-color="#f0d080"></stop>
+      <stop offset="100%" stop-color="#b8860b"></stop>
+    </linearGradient>
+    <linearGradient id="gold2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b8860b"></stop>
+      <stop offset="50%" stop-color="#f0d080"></stop>
+      <stop offset="100%" stop-color="#c9a84c"></stop>
+    </linearGradient>
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c9a84c"></stop>
+      <stop offset="50%" stop-color="#f0d080"></stop>
+      <stop offset="100%" stop-color="#b8860b"></stop>
+    </linearGradient>
+  </defs></svg>
