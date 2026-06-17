@@ -1793,10 +1793,14 @@ const FocusTrap = (() => {
       if (!resp.ok || !json.success) throw new Error(json.error || 'RSVP request failed');
     } catch (apiErr) {
       console.warn('RSVP API error:', apiErr);
+      setLoading(false);
+      Toast.show(
+        'RSVP submission failed. Please try again.',
+        'error'
+      );
+      return;
     }
 
-    setLoading(false);
- 
     setLoading(false);
     form.hidden = true;
     successEl.hidden = false;
