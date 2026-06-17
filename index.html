@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  yo this second push to this
+  yo this official push to this
 -->
 <html lang="en-IN">
 <head>
@@ -29,9 +29,12 @@
 <meta name="twitter:title" content="Sriram ❤️ Ramani | July 5, 2026">
 <meta name="twitter:description" content="Join us to celebrate 11 years of love and the beginning of forever.">
 <meta name="twitter:image" content="https://sriwedsramz2026.com/images/preview.webp">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Mywedd" />
+<link rel="manifest" href="/site.webmanifest" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -804,6 +807,42 @@ footer .footer-meta { display: block; color: rgba(255,255,255,0.22); font-size: 
 @media (max-width: 600px) {
   .contact-grid { grid-template-columns: 1fr; }
 }
+
+/* ── ADMIN LOGIN PANEL ────────────────────────────────────── */
+.admin-login-panel {
+  display: flex; align-items: center; justify-content: center;
+  padding: 4rem 2rem; flex: 1;
+}
+.admin-login-form {
+  width: 100%; max-width: 360px;
+  display: flex; flex-direction: column; gap: 1.25rem;
+}
+.admin-login-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.6rem;
+  font-weight: 300; font-style: italic; color: var(--gold-light);
+  margin-bottom: 0.25rem;
+}
+.admin-login-field {
+  display: flex; flex-direction: column; gap: 0.4rem;
+}
+.admin-login-field label {
+  font-size: 0.68rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(255,255,255,0.45);
+}
+.admin-login-field input {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(232,201,122,0.25);
+  border-radius: 2px; padding: 0.75rem 1rem; color: var(--white);
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none;
+  transition: border-color var(--t-base);
+}
+.admin-login-field input:focus { border-color: rgba(232,201,122,0.6); }
+.admin-login-error {
+  font-size: 0.78rem; color: #e07070; letter-spacing: 0.04em;
+  background: rgba(192,98,90,0.12); border-radius: 2px;
+  padding: 0.6rem 0.8rem;
+}
+.admin-login-submit { margin-top: 0.25rem; justify-content: center; }
+.admin-login-submit:disabled { opacity: 0.55; cursor: not-allowed; }
 </style>
 </head>
 <body>
@@ -874,7 +913,7 @@ footer .footer-meta { display: block; color: rgba(255,255,255,0.22); font-size: 
       <img src="images/1.webp" alt="Sriram and Ramani — our journey" loading="lazy" decoding="async">
     </div>
     <div class="story-photo-frame">
-      <img src="images/2.webp" alt="Together through the years" loading="lazy" decoding="async">
+      <img src="images/V.webp" alt="Together through the years" loading="lazy" decoding="async">
     </div>
   </div>
 
@@ -1086,7 +1125,7 @@ footer .footer-meta { display: block; color: rgba(255,255,255,0.22); font-size: 
     <div class="section-rule" style="margin:0 auto 2rem;"></div>
   </div>
   <div class="gallery" role="list" aria-label="Photo gallery">
-    <div class="gallery-item" data-index="0" role="listitem" tabindex="0" aria-label="Photo 1 of 5 — click to enlarge"><img src="images/1.webp" alt="Sriram and Ramani together" loading="lazy" decoding="async"><div class="gallery-caption" aria-hidden="true"><span>Together ✦</span></div></div>
+    <div class="gallery-item" data-index="0" role="listitem" tabindex="0" aria-label="Photo 1 of 5 — click to enlarge"><img src="images/R.webp" alt="Sriram and Ramani together" loading="lazy" decoding="async"><div class="gallery-caption" aria-hidden="true"><span>Together ✦</span></div></div>
     <div class="gallery-item" data-index="1" role="listitem" tabindex="0" aria-label="Photo 2 of 5 — click to enlarge"><img src="images/2.webp" alt="Sriram and Ramani smiling" loading="lazy" decoding="async"><div class="gallery-caption" aria-hidden="true"><span>Smiles ✦</span></div></div>
     <div class="gallery-item" data-index="2" role="listitem" tabindex="0" aria-label="Photo 3 of 5 — click to enlarge"><img src="images/3.webp" alt="Sriram and Ramani celebrating" loading="lazy" decoding="async"><div class="gallery-caption" aria-hidden="true"><span>Joy ✦</span></div></div>
     <div class="gallery-item" data-index="3" role="listitem" tabindex="0" aria-label="Photo 4 of 5 — click to enlarge"><img src="images/4.webp" alt="A romantic moment" loading="lazy" decoding="async"><div class="gallery-caption" aria-hidden="true"><span>Romance ✦</span></div></div>
@@ -1307,15 +1346,32 @@ footer .footer-meta { display: block; color: rgba(255,255,255,0.22); font-size: 
   <div class="admin-header">
     <div class="admin-title">
       Admin Dashboard
-      <small>Ctrl + Shift + A &nbsp;·&nbsp; Session data · Supabase when configured</small>
+      <small>Ctrl + Shift + A &nbsp;·&nbsp; Login required for live data</small>
     </div>
     <button class="admin-close" id="admin-close" aria-label="Close admin dashboard">Close ✕</button>
   </div>
   <div class="admin-body">
-    <div class="admin-setup-msg" id="admin-setup-msg">
-      <strong style="color:var(--gold-light);">Supabase not configured.</strong>
-      Data below is from this browser session only. To enable full tracking:
-      set <code>supabase.enabled = true</code> and add your <code>url</code> + <code>anonKey</code> in CONFIG.
+    </div>
+    <!-- Admin login panel — shown when token absent / expired -->
+  <div id="admin-login-panel" class="admin-login-panel" hidden>
+    <form id="admin-login-form" class="admin-login-form" novalidate aria-label="Admin sign in">
+      <div class="admin-login-title">Sign in to Dashboard</div>
+      <div class="admin-login-field">
+        <label for="admin-email">Email</label>
+        <input type="email" id="admin-email" placeholder="organiser@example.com" autocomplete="username" required>
+      </div>
+      <div class="admin-login-field">
+        <label for="admin-password">Password</label>
+        <input type="password" id="admin-password" placeholder="••••••••" autocomplete="current-password" required>
+      </div>
+      <p class="admin-login-error" id="admin-login-error" role="alert" aria-live="polite" hidden></p>
+      <button class="admin-btn admin-login-submit" id="admin-login-submit" type="submit">Sign in →</button>
+    </form>
+  </div>
+
+  <div class="admin-body" id="admin-body" hidden>
+    <div class="admin-setup-msg" id="admin-setup-msg" hidden>
+      Showing session data only. Click <strong style="color:var(--gold-light);">↻ Refresh from DB</strong> to load live data.
     </div>
     <!-- Stats -->
     <div class="admin-grid">
@@ -1475,11 +1531,6 @@ const CONFIG = (() => {
     passphraseHash: 'REPLACE_WITH_YOUR_64_CHARACTER_SHA256_HASH_OF_YOUR_PASSPHRASE00',
     dateLockLetter: false,
     letterEncoded:  _encoded,
-    supabase: {
-      enabled:  false,
-      url:      'https://qliewhcflzusaidejfrj.supabase.co',
-      anonKey:  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFsaWV3aGNmbHp1c2FpZGVqZnJqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4MzY4MTIsImV4cCI6MjA5NjQxMjgxMn0.ZdClAbVz20dW6nE6kI6j-53KxxbiiKJVH_7KPMPnWJI',
-    },
     venue: {
       name:    'Krishna Kalyana Mandapam',
       address: 'Krishna Wedding Hall, Thirumal Nagar, Tirunelveli',
@@ -1490,37 +1541,20 @@ const CONFIG = (() => {
   });
 })();
  
-/* ══════════════════════════════════════════════════════════
-   V4 FIX: CONDITIONAL SUPABASE LOADING
-   Loads CDN only when supabase.enabled = true.
-   Solves two V3 problems:
-   1. 97KB loaded unnecessarily when Supabase is disabled.
-   2. Race condition: `defer` meant window.supabase wasn't ready
-      when loadBlessings() was called. Now we inject the script
-      and wait for it to load before calling initDB().
-══════════════════════════════════════════════════════════ */
-let _dbClient = null;
-const getDB = () => _dbClient;
- 
-const injectSupabaseIfNeeded = (callback) => {
-  if (!CONFIG.supabase.enabled) { callback(null); return; }
-  if (window.supabase) {
-    try { _dbClient = window.supabase.createClient(CONFIG.supabase.url, CONFIG.supabase.anonKey); }
-    catch (_) { _dbClient = null; }
-    callback(_dbClient);
-    return;
-  }
-  // Inject script dynamically — avoids render-blocking + race condition
-  const s = document.createElement('script');
-  s.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
-  s.onload = () => {
-    try { _dbClient = window.supabase.createClient(CONFIG.supabase.url, CONFIG.supabase.anonKey); }
-    catch (_) { _dbClient = null; }
-    callback(_dbClient);
+/* ── AdminAuth ───────────────────────────────────────────────
+   Stores the JWT returned by POST /api/admin/login.
+   Token lives in sessionStorage — cleared on tab close.
+─────────────────────────────────────────────────────────── */
+const AdminAuth = (() => {
+  let _token = null;
+  try { _token = sessionStorage.getItem('admin_token'); } catch (_) {}
+  return {
+    getToken()   { return _token; },
+    setToken(t)  { _token = t;   try { sessionStorage.setItem('admin_token', t); }    catch (_) {} },
+    clearToken() { _token = null; try { sessionStorage.removeItem('admin_token'); }   catch (_) {} },
+    isAuth()     { return !!_token; },
   };
-  s.onerror = () => callback(null);
-  document.head.appendChild(s);
-};
+})();
  
 /* ══════════════════════════════════════════════════════════
    V4 FIX: CONSOLIDATED SCROLL HANDLER
@@ -1766,16 +1800,25 @@ const FocusTrap = (() => {
  
     SessionData.addRsvp(payload);
     AdminDashboard.updateStats();
- 
-    const db = getDB();
-    if (db) {
-      try {
-        const { error } = await db.from('rsvps').insert([payload]);
-        if (error) throw error;
-      } catch (err) {
-        console.warn('RSVP Supabase error:', err);
-      }
+
+    try {
+      const resp = await fetch('/api/rsvp', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({
+          ...payload,
+          email: payload.email || null,
+          phone: payload.phone || null,
+          notes: payload.notes || null,
+        }),
+      });
+      const json = await resp.json();
+      if (!resp.ok || !json.success) throw new Error(json.error || 'RSVP request failed');
+    } catch (apiErr) {
+      console.warn('RSVP API error:', apiErr);
     }
+
+    setLoading(false);
  
     setLoading(false);
     form.hidden = true;
@@ -1827,26 +1870,18 @@ const FocusTrap = (() => {
     return card;
   };
  
-  /* V4 FIX: loadBlessings called inside injectSupabaseIfNeeded callback
-     — Supabase is guaranteed to be ready when this runs */
-  const loadBlessings = (db) => {
-    if (!db) {
-      /* V4 FIX: show empty state instead of blank list */
-      removeSkeleton();
-      showEmptyState();
-      return;
-    }
-    db.from('blessings')
-      .select('name, relation, message')
-      .order('created_at', { ascending: false })
-      .limit(50)
-      .then(({ data, error }) => {
+  /* Loads blessings from the backend API */
+  const loadBlessings = () => {
+    fetch('/api/blessings?limit=50')
+      .then(resp => resp.json())
+      .then((json) => {
         removeSkeleton();
-        if (error) throw error;
+        if (!json.success) throw new Error(json.error || 'Failed to load blessings');
+        const data = json.data.blessings || [];
         list.innerHTML = '';
         if (!data.length) { showEmptyState(); }
         else { data.forEach(({ name, relation, message }) => list.append(buildCard(name, relation, message))); }
-        updateCount(data.length);
+        updateCount(json.data.total ?? data.length);
       })
       .catch((err) => {
         console.warn('Blessings load error:', err);
@@ -1855,9 +1890,8 @@ const FocusTrap = (() => {
         if (errorEl) errorEl.classList.add('visible');
       });
   };
- 
-  /* V4 FIX: load only after Supabase is confirmed ready */
-  injectSupabaseIfNeeded(loadBlessings);
+
+  loadBlessings();
  
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -1874,15 +1908,20 @@ const FocusTrap = (() => {
  
     btn.disabled = true; btn.setAttribute('aria-busy', 'true'); btn.classList.add('loading');
  
-    const db = getDB();
-    if (db) {
-      try {
-        await db.from('blessings').insert([{
+    try {
+      const resp = await fetch('/api/blessings', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({
           name:     nameVal.slice(0, 80),
-          relation: relationVal.slice(0, 60),
+          relation: relationVal.slice(0, 60) || null,
           message:  messageVal.slice(0, 500),
-        }]);
-      } catch (_) {}
+        }),
+      });
+      const json = await resp.json();
+      if (!resp.ok || !json.success) throw new Error(json.error || 'Blessing request failed');
+    } catch (apiErr) {
+      console.warn('Blessing API error:', apiErr);
     }
  
     SessionData.addBlessing({ name: nameVal, relation: relationVal, message: messageVal });
@@ -2178,26 +2217,56 @@ const FocusTrap = (() => {
     if (!ALLOWED.includes(file.type)) { Toast.show('Please upload a JPG, PNG, or WebP image.', 'error'); return; }
     if (file.size > MAX_MB * 1024 * 1024) { Toast.show(`Image must be under ${MAX_MB}MB.`, 'error'); return; }
     const r = new FileReader();
-    r.onload = ({ target }) => { pending = { dataUrl: target.result }; formWrap.style.display = 'block'; authorEl.focus(); };
+    r.onload = ({ target }) => { pending = { dataUrl: target.result, mimeType: file.type }; formWrap.style.display = 'block'; authorEl.focus(); };
     r.readAsDataURL(file); uploadInput.value = '';
   });
   cancelBtn?.addEventListener('click', () => { pending = null; formWrap.style.display = 'none'; authorEl.value = ''; captionEl.value = ''; });
-  submitBtn?.addEventListener('click', () => {
+  submitBtn?.addEventListener('click', async () => {
     if (!pending) return;
     if (!RateLimit.check('memory', 5)) { Toast.show('Please slow down.', 'error'); return; }
     const author  = authorEl.value.trim().slice(0, 60) || 'A guest';
     const caption = captionEl.value.trim().slice(0, 200);
-    const empty   = grid.querySelector('.memory-empty'); if (empty) empty.remove();
+
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+
+    let result;
+    try {
+      const resp = await fetch('/api/upload', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({
+          imageData:  pending.dataUrl,
+          mimeType:   pending.mimeType,
+          authorName: author,
+          caption:    caption || null,
+        }),
+      });
+      const json = await resp.json();
+      if (!resp.ok || !json.success) throw new Error(json.error || 'Upload failed');
+      result = json.data;
+    } catch (apiErr) {
+      console.warn('Memory upload error:', apiErr);
+      Toast.show('Could not upload your memory. Please try again.', 'error');
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('loading');
+      return;
+    }
+
+    const empty = grid.querySelector('.memory-empty'); if (empty) empty.remove();
     const card = document.createElement('div'); card.className = 'memory-card';
-    const img = document.createElement('img'); img.src = pending.dataUrl; img.alt = `Memory from ${author}`; img.loading = 'lazy';
+    const img = document.createElement('img'); img.src = result.publicUrl || pending.dataUrl; img.alt = `Memory from ${author}`; img.loading = 'lazy';
     const body = document.createElement('div'); body.className = 'memory-card-body';
     const authEl2 = document.createElement('div'); authEl2.className = 'memory-card-author'; authEl2.textContent = author;
     body.appendChild(authEl2);
     if (caption) { const capEl = document.createElement('div'); capEl.className = 'memory-card-text'; capEl.textContent = caption; body.appendChild(capEl); }
     card.append(img, body); grid.prepend(card);
     pending = null; formWrap.style.display = 'none'; authorEl.value = ''; captionEl.value = '';
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('loading');
     Toast.show('Memory added to the wall! \uD83C\uDF38', 'success');
   });
+    
 })();
  
 /* ══════════════════════════════════════════════════════════
@@ -2355,15 +2424,60 @@ const AdminDashboard = (() => {
     });
   });
  
+  const showLogin = () => {
+    const lp = $('admin-login-panel');
+    const ab = $('admin-body');
+    if (lp) lp.hidden = false;
+    if (ab) ab.hidden  = true;
+  };
+
+  const showDashboard = () => {
+    const lp = $('admin-login-panel');
+    const ab = $('admin-body');
+    if (lp) lp.hidden = true;
+    if (ab) ab.hidden  = false;
+    if (setupMsg) setupMsg.hidden = false;
+    updateStats();
+  };
+
   const open = () => {
     prevFocus = document.activeElement;
-    updateStats();
-    setupMsg.style.display = CONFIG.supabase.enabled ? 'none' : 'block';
     overlay.classList.add('open');
     overlay.removeAttribute('aria-hidden');
     document.body.style.overflow = 'hidden';
     FocusTrap.activate(overlay);
+    if (AdminAuth.isAuth()) { showDashboard(); } else { showLogin(); }
   };
+
+  /* Admin login form */
+  $('admin-login-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email    = $('admin-email')?.value.trim()   || '';
+    const password = $('admin-password')?.value       || '';
+    if (!email || !password) return;
+    const submitBtn = $('admin-login-submit');
+    const errEl     = $('admin-login-error');
+    submitBtn.disabled    = true;
+    submitBtn.textContent = 'Signing in…';
+    if (errEl) errEl.hidden = true;
+    try {
+      const resp = await fetch('/api/admin/login', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ email, password }),
+      });
+      const json = await resp.json();
+      if (!resp.ok || !json.success) throw new Error(json.error || 'Login failed');
+      AdminAuth.setToken(json.data.accessToken);
+      const pwEl = $('admin-password'); if (pwEl) pwEl.value = '';
+      showDashboard();
+    } catch (loginErr) {
+      if (errEl) { errEl.textContent = loginErr.message || 'Invalid email or password.'; errEl.hidden = false; }
+    } finally {
+      submitBtn.disabled    = false;
+      submitBtn.textContent = 'Sign in →';
+    }
+  });
  
   const close = () => {
     overlay.classList.remove('open');
@@ -2403,26 +2517,46 @@ const AdminDashboard = (() => {
     Toast.show('Blessings exported to CSV \u2713', 'success');
   });
  
-  /* V4: Refresh — fetches full rows from Supabase, not just counts */
   $('admin-refresh')?.addEventListener('click', async () => {
-    const db = getDB();
-    if (!db) { Toast.show('Supabase not configured. Enable it in CONFIG.', 'error'); return; }
+    const token = AdminAuth.getToken();
+    if (!token) { showLogin(); return; }
+    const btn = $('admin-refresh');
+    if (btn) { btn.disabled = true; btn.textContent = '↻ Loading…'; }
     try {
-      const [rsvpRes, blessingRes] = await Promise.all([
-        db.from('rsvps').select('guest_name,attending,guests_count,meal_preference,email,notes,created_at').order('created_at', { ascending: false }).limit(200),
-        db.from('blessings').select('name,relation,message,created_at').order('created_at', { ascending: false }).limit(200),
+      const authHdr = { 'Authorization': `Bearer ${token}` };
+      const [summaryResp, rsvpResp, blessingResp] = await Promise.all([
+        fetch('/api/admin/data?view=summary',              { headers: authHdr }),
+        fetch('/api/admin/data?view=rsvps&limit=200',      { headers: authHdr }),
+        fetch('/api/admin/data?view=blessings&limit=200',  { headers: authHdr }),
       ]);
-      if (rsvpRes.error || blessingRes.error) throw rsvpRes.error || blessingRes.error;
- 
-      /* Merge DB data into session store for display */
-      (rsvpRes.data || []).forEach(r => SessionData.addRsvp({ guest_name: r.guest_name, attending: r.attending, guests_count: r.guests_count, meal_preference: r.meal_preference, email: r.email, notes: r.notes, ts: new Date(r.created_at).getTime() }));
-      (blessingRes.data || []).forEach(b => SessionData.addBlessing({ name: b.name, relation: b.relation, message: b.message, ts: new Date(b.created_at).getTime() }));
- 
+      /* Session expired */
+      if (summaryResp.status === 401) {
+        AdminAuth.clearToken(); showLogin();
+        Toast.show('Session expired. Please log in again.', 'error'); return;
+      }
+      const [summary, rsvpsJson, blessingsJson] = await Promise.all([
+        summaryResp.json(), rsvpResp.json(), blessingResp.json(),
+      ]);
+      if (!summary.success) throw new Error(summary.error || 'API error');
+      /* Populate stat cards from live summary */
+      const s = summary.data.summary;
+      $('admin-rsvp-total').textContent      = s.rsvps.total;
+      $('admin-rsvp-yes').textContent        = s.rsvps.attending;
+      $('admin-rsvp-pct').textContent        = `${s.rsvps.attendancePct}%`;
+      $('admin-rsvp-guests').textContent     = s.rsvps.totalGuests;
+      $('admin-blessings-total').textContent = s.blessings.total;
+      renderMealSummary(s.rsvps.mealBreakdown);
+      /* Merge rows into SessionData so existing render functions work */
+      if (rsvpsJson.success)    (rsvpsJson.data.rows    || []).forEach(r => SessionData.addRsvp(     { ...r, ts: new Date(r.created_at).getTime() }));
+      if (blessingsJson.success)(blessingsJson.data.rows || []).forEach(b => SessionData.addBlessing({ ...b, ts: new Date(b.created_at).getTime() }));
       updateStats();
-      Toast.show(`Loaded: ${rsvpRes.data.length} RSVPs \u00B7 ${blessingRes.data.length} Blessings`, 'success', 5000);
+      Toast.show(`Live: ${s.rsvps.total} RSVPs \u00B7 ${s.blessings.total} Blessings`, 'success', 4000);
     } catch (err) {
       console.warn('Admin refresh error:', err);
-      Toast.show('Could not reach Supabase.', 'error');
+      Toast.show('Could not load admin data.', 'error');
+      updateStats();
+    } finally {
+      if (btn) { btn.disabled = false; btn.textContent = '↻ Refresh from DB'; }
     }
   });
  
@@ -2458,3 +2592,4 @@ function copyContact(btn, number) {
 </script>
 </body>
 </html>
+
