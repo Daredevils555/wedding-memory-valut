@@ -65,8 +65,6 @@ const handler = async (req, res) => {
     phone,
     guests_count,
     attending,
-    meal_preference,
-    notes,
     // turnstileToken already verified by middleware
   } = validation.data;
  
@@ -100,8 +98,6 @@ const handler = async (req, res) => {
       phone,
       guests_count,
       attending,
-      meal_preference: attending ? (meal_preference || 'no-preference') : null,
-      notes,
       ip_hash: req.ipHash,
     })
     .select('id, created_at')
@@ -116,7 +112,7 @@ const handler = async (req, res) => {
   db.from('analytics_events').insert({
     event_type: 'rsvp_submitted',
     section:    'rsvp',
-    metadata:   { attending, guests_count, meal_preference },
+    metadata:   { attending, guests_count},
     ip_hash:    req.ipHash,
   }).catch(e => console.warn('[Analytics] RSVP event failed:', e.message));
  

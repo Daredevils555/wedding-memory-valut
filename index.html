@@ -1091,20 +1091,7 @@ footer .footer-meta { display: block; color: rgba(255,255,255,0.22); font-size: 
         </div>
         <span class="field-error" id="err-attending" role="alert">Please select your attendance</span>
       </div>
-      <div class="form-group rsvp-meal-group" id="rsvp-meal-group">
-        <label for="rsvp-meal">Meal Preference</label>
-        <select id="rsvp-meal" name="meal_preference">
-          <option value="no-preference">No preference</option>
-          <option value="vegetarian">Vegetarian</option>
-          <option value="non-vegetarian">Non-Vegetarian</option>
-          <option value="vegan">Vegan</option>
-          <option value="jain">Jain</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="rsvp-notes">Special Requests <span style="opacity:0.5;font-size:0.65em;">(optional)</span></label>
-        <textarea id="rsvp-notes" name="notes" placeholder="Dietary requirements, accessibility needs, or any special requests…" maxlength="500"></textarea>
-      </div>
+      
       <button class="btn" type="submit" id="rsvp-btn" aria-busy="false">
         <div class="btn-spinner" aria-hidden="true"></div>
         <span class="btn-text">Send RSVP ✦</span>
@@ -1258,16 +1245,16 @@ footer .footer-meta { display: block; color: rgba(255,255,255,0.22); font-size: 
 
       <div class="contact-card contact-card--emergency">
         <div class="contact-role">🚨 Emergency Contact</div>
-        <div class="contact-name">N.Manju</div>
-        <div class="contact-phone-display">+91 7845320429</div>
+        <div class="contact-name">N.Chenbagam</div>
+        <div class="contact-phone-display">+91 9443519352</div>
         <div class="contact-actions">
-          <a href="tel:+917845320429" class="contact-btn contact-btn--call">
+          <a href="tel:+919443519352" class="contact-btn contact-btn--call">
             <span aria-hidden="true">📞</span> Call Now
           </a>
-          <a href="https://wa.me/917845320429" target="_blank" rel="noopener" class="contact-btn contact-btn--whatsapp">
+          <a href="https://wa.me/919443519352" target="_blank" rel="noopener" class="contact-btn contact-btn--whatsapp">
             <span aria-hidden="true">💬</span> WhatsApp
           </a>
-          <button class="contact-btn contact-btn--copy" onclick="copyContact(this, '+917845320429')" aria-label="Copy emergency number">
+          <button class="contact-btn contact-btn--copy" onclick="copyContact(this, '+919443519352')" aria-label="Copy emergency number">
             <span aria-hidden="true">📋</span> Copy Number
           </button>
         </div>
@@ -1795,7 +1782,7 @@ const FocusTrap = (() => {
       guests_count:    guestsCount,           // V4 FIX: int, not string
       attending,
       meal_preference: attending ? form.querySelector('#rsvp-meal').value : null,
-      notes:           sanitize(form.querySelector('#rsvp-notes').value, 500),
+      
     };
  
     SessionData.addRsvp(payload);
@@ -1809,7 +1796,7 @@ const FocusTrap = (() => {
           ...payload,
           email: payload.email || null,
           phone: payload.phone || null,
-          notes: payload.notes || null,
+          
         }),
       });
       const json = await resp.json();
