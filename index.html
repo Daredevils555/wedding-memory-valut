@@ -356,8 +356,6 @@ section { padding: 6rem 2rem; max-width: 900px; margin: 0 auto; }
 .rsvp-radio-label input[type="radio"]:checked + .rsvp-radio-indicator { border-color: var(--gold); background: var(--gold); }
 .rsvp-radio-label input[type="radio"]:checked + .rsvp-radio-indicator::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--dark); }
 .rsvp-radio-label input[type="radio"]:focus-visible + .rsvp-radio-indicator { outline: 2px solid var(--gold); outline-offset: 3px; }
-.rsvp-meal-group { display: none; }
-.rsvp-meal-group.visible { display: block; animation: fadeUp 0.3s ease; }
 .rsvp-form .form-group textarea { height: 90px; resize: none; min-height: unset; }
 /* V4: Honeypot field — visually hidden, only bots fill it */
 .hp-field { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
@@ -538,7 +536,7 @@ footer .footer-meta { display: block; color: rgba(255,255,255,0.22); font-size: 
 .anniversary-close:hover { background: var(--gold-light); color: var(--dark); }
  
 /* ═══════════════════════════════════════════════════════════
-   ADMIN DASHBOARD — V4: search, filter chips, meal summary
+   ADMIN DASHBOARD — V4: search, filter chips.
 ═══════════════════════════════════════════════════════════ */
 #admin-overlay { position: fixed; inset: 0; z-index: 3000; background: rgba(42,31,26,0.97); display: flex; flex-direction: column; opacity: 0; pointer-events: none; transition: opacity 0.3s; overflow-y: auto; }
 #admin-overlay.open { opacity: 1; pointer-events: all; }
@@ -553,10 +551,6 @@ footer .footer-meta { display: block; color: rgba(255,255,255,0.22); font-size: 
 .admin-stat { background: rgba(255,255,255,0.04); border: 1px solid rgba(232,201,122,0.12); border-radius: 2px; padding: 1.25rem; }
 .admin-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
 .admin-stat-label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.3rem; }
-/* V4 NEW: Meal summary */
-.admin-meal-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
-.admin-meal-chip { background: rgba(255,255,255,0.04); border: 1px solid rgba(232,201,122,0.1); border-radius: 2px; padding: 0.4rem 0.9rem; font-size: 0.75rem; color: rgba(255,255,255,0.6); display: flex; gap: 0.5rem; align-items: center; }
-.admin-meal-chip strong { color: var(--gold-light); }
 /* Actions */
 .admin-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2rem; }
 .admin-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.2rem; min-height: 40px; background: transparent; border: 1px solid rgba(232,201,122,0.25); color: var(--gold-light); font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; cursor: pointer; transition: background var(--t-base); }
@@ -1309,7 +1303,7 @@ footer .footer-meta { display: block; color: rgba(255,255,255,0.22); font-size: 
  
 <footer>
   <div class="footer-names">Sriram &amp; Ramani</div>
-  <span class="footer-meta">July 5, 2026 &nbsp;·&nbsp; With love &amp; gratitude</span>
+  <span class="footer-meta">July 5, 2026 &nbsp;·&nbsp; With love and gratitude &amp; Made by ASWIN</span>
 </footer>
  
 <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
@@ -1328,7 +1322,7 @@ footer .footer-meta { display: block; color: rgba(255,255,255,0.22); font-size: 
   </div>
 </div>
  
-<!-- ADMIN DASHBOARD — V4: search + filter + meal summary + duplicate detection -->
+<!-- ADMIN DASHBOARD — V4: search + filter + duplicate detection -->
 <div id="admin-overlay" role="dialog" aria-modal="true" aria-label="Admin dashboard" aria-hidden="true">
   <div class="admin-header">
     <div class="admin-title">
@@ -1368,11 +1362,8 @@ footer .footer-meta { display: block; color: rgba(255,255,255,0.22); font-size: 
       <div class="admin-stat"><div class="admin-stat-num" id="admin-rsvp-guests">0</div><div class="admin-stat-label">Total Guests</div></div>
       <div class="admin-stat"><div class="admin-stat-num" id="admin-blessings-total">0</div><div class="admin-stat-label">Blessings</div></div>
     </div>
-    <!-- V4 NEW: Meal preference summary -->
-    <div class="admin-section-title">Meal Preferences</div>
-    <div class="admin-meal-grid" id="admin-meal-grid">
-      <div class="admin-meal-chip" style="color:rgba(255,255,255,0.3);font-style:italic;">No RSVPs yet</div>
-    </div>
+    
+    
     <!-- Actions -->
     <div class="admin-actions">
       <button class="admin-btn" id="admin-export-rsvp" aria-label="Export RSVP data as CSV">↓ Export RSVPs (CSV)</button>
@@ -1391,7 +1382,7 @@ footer .footer-meta { display: block; color: rgba(255,255,255,0.22); font-size: 
     </div>
     <div class="admin-table-wrap">
       <table class="admin-table" aria-label="RSVP submissions">
-        <thead><tr><th>Name</th><th>Attending</th><th>Guests</th><th>Meal</th><th>Email</th><th>Notes</th><th>Time</th></tr></thead>
+        <thead><tr><th>Name</th><th>Attending</th><th>Guests</th><th>Email</th><th>Time</th></tr></thead>
         <tbody id="admin-rsvp-tbody"><tr><td colspan="7" class="admin-empty">No RSVPs submitted this session yet.</td></tr></tbody>
       </table>
     </div>
@@ -1727,12 +1718,11 @@ const FocusTrap = (() => {
   const successIcon = document.getElementById('rsvp-success-icon');
   const successTitle= document.getElementById('rsvp-success-title');
   const successMsg  = document.getElementById('rsvp-success-msg');
-  const mealGroup   = document.getElementById('rsvp-meal-group');
-  if (!form) return;
+   if (!form) return;
  
   form.querySelectorAll('[name="attending"]').forEach(radio => {
     radio.addEventListener('change', () => {
-      mealGroup.classList.toggle('visible', form.querySelector('[name="attending"]:checked')?.value === 'yes');
+      
     });
   });
  
@@ -1781,7 +1771,7 @@ const FocusTrap = (() => {
       phone:           sanitize(form.querySelector('#rsvp-phone').value, 20),
       guests_count:    guestsCount,           // V4 FIX: int, not string
       attending,
-      meal_preference: attending ? form.querySelector('#rsvp-meal').value : null,
+      
       
     };
  
@@ -2260,7 +2250,6 @@ const FocusTrap = (() => {
    V4 ADMIN DASHBOARD
    Enhancements over V3:
    • Search + attendance filter for RSVP table
-   • Meal preference breakdown summary
    • Duplicate RSVP row highlighting
    • Admin refresh fetches full rows from Supabase (not just counts)
    • Timestamps in table + CSV export
@@ -2277,17 +2266,7 @@ const AdminDashboard = (() => {
  
   const $ = (id) => document.getElementById(id);
  
-  /* V4: Meal summary calculation */
-  const getMealSummary = (rsvps) => {
-    const attending = rsvps.filter(r => r.attending);
-    if (!attending.length) return null;
-    const counts = {};
-    attending.forEach(r => {
-      const k = r.meal_preference || 'no-preference';
-      counts[k] = (counts[k] || 0) + 1;
-    });
-    return counts;
-  };
+  
  
   /* V4: Duplicate name detection across the full RSVP set */
   const getDuplicateNames = (rsvps) => {
@@ -2307,27 +2286,8 @@ const AdminDashboard = (() => {
     $('admin-rsvp-pct').textContent       = stats.total ? `${Math.round((stats.yes / stats.total) * 100)}%` : '\u2014';
     $('admin-rsvp-guests').textContent    = stats.guests;
     $('admin-blessings-total').textContent = SessionData.getBlessings().length;
-    renderMealSummary();
     renderRsvpTable();
     renderBlessingsTable();
-  };
- 
-  /* V4: Meal summary chips */
-  const renderMealSummary = () => {
-    const grid   = $('admin-meal-grid');
-    const rsvps  = SessionData.getRsvps();
-    const counts = getMealSummary(rsvps);
-    grid.innerHTML = '';
-    if (!counts) {
-      const chip = document.createElement('div'); chip.className = 'admin-meal-chip'; chip.style.fontStyle = 'italic'; chip.style.color = 'rgba(255,255,255,0.3)'; chip.textContent = 'No attending RSVPs yet';
-      grid.appendChild(chip); return;
-    }
-    const labels = { 'no-preference': 'No preference', 'vegetarian': 'Vegetarian', 'non-vegetarian': 'Non-Veg', 'vegan': 'Vegan', 'jain': 'Jain' };
-    Object.entries(counts).sort(([,a],[,b]) => b - a).forEach(([key, cnt]) => {
-      const chip = document.createElement('div'); chip.className = 'admin-meal-chip';
-      chip.innerHTML = `<strong>${cnt}</strong> ${esc(labels[key] || key)}`;
-      grid.appendChild(chip);
-    });
   };
  
   /* V4: RSVP table with search, filter, duplicate highlighting */
@@ -2335,7 +2295,7 @@ const AdminDashboard = (() => {
     const tbody  = $('admin-rsvp-tbody');
     const rsvps  = SessionData.getRsvps();
     const dupes  = getDuplicateNames(rsvps);
- 
+
     const filtered = rsvps.filter(r => {
       const matchSearch  = !_search || (r.guest_name || '').toLowerCase().includes(_search);
       const matchFilter  = _filter === 'all' || (_filter === 'attending' ? r.attending : !r.attending);
@@ -2359,9 +2319,7 @@ const AdminDashboard = (() => {
         <td>${esc(r.guest_name)}</td>
         <td>${badge}</td>
         <td>${esc(r.guests_count)}</td>
-        <td>${esc(r.meal_preference || '\u2014')}</td>
         <td>${esc(r.email || '\u2014')}</td>
-        <td>${esc(r.notes || '\u2014')}</td>
         <td>${esc(fmtTime(r.ts))}</td>`;
       tbody.appendChild(row);
     });
@@ -2486,8 +2444,8 @@ const AdminDashboard = (() => {
     const rsvps = SessionData.getRsvps();
     if (!rsvps.length) { Toast.show('No RSVP data to export yet.', 'info'); return; }
     const csv = toCSV(
-      rsvps.map(r => [r.guest_name, r.attending ? 'Yes' : 'No', r.guests_count, r.meal_preference, r.email, r.phone, r.notes, fmtTime(r.ts)]),
-      ['Name', 'Attending', 'Guests', 'Meal', 'Email', 'Phone', 'Notes', 'Time']
+      rsvps.map(r => [r.guest_name, r.attending ? 'Yes' : 'No', r.guests_count, r.email, r.phone, fmtTime(r.ts)]),
+      ['Name', 'Attending', 'Guests', 'Email', 'Phone', 'Time']
     );
     downloadCSV(csv, `rsvps-${new Date().toISOString().slice(0,10)}.csv`);
     Toast.show('RSVPs exported to CSV \u2713', 'success');
@@ -2532,7 +2490,7 @@ const AdminDashboard = (() => {
       $('admin-rsvp-pct').textContent        = `${s.rsvps.attendancePct}%`;
       $('admin-rsvp-guests').textContent     = s.rsvps.totalGuests;
       $('admin-blessings-total').textContent = s.blessings.total;
-      renderMealSummary(s.rsvps.mealBreakdown);
+      
       /* Merge rows into SessionData so existing render functions work */
       if (rsvpsJson.success)    (rsvpsJson.data.rows    || []).forEach(r => SessionData.addRsvp(     { ...r, ts: new Date(r.created_at).getTime() }));
       if (blessingsJson.success)(blessingsJson.data.rows || []).forEach(b => SessionData.addBlessing({ ...b, ts: new Date(b.created_at).getTime() }));
