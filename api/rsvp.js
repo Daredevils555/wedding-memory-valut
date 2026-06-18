@@ -109,12 +109,16 @@ const handler = async (req, res) => {
   }
  
   // Log analytics event (non-blocking)
-  db.from('analytics_events').insert({
-    event_type: 'rsvp_submitted',
-    section:    'rsvp',
-    metadata:   { attending, guests_count},
-    ip_hash:    req.ipHash,
-  }).catch(e => console.warn('[Analytics] RSVP event failed:', e.message));
+  try {
+    await db.from('analytics_events').insert({
+        event_type: 'rsvp_submitted',
+        section: 'rsvp',
+        metadata: { attending, guests_count },
+        ip_hash: req.ipHash,
+    });
+} catch (e) {
+    console.warn('[Analytics] RSVP event failed:', e.message);
+}
  
   return ok(res, {
     received:   true,
