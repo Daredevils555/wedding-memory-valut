@@ -215,17 +215,20 @@ const handler = async (req, res) => {
   }
 
   // ── Analytics event (non-blocking) ───────────────────────────────
-  db.from('analytics_events').insert({
-    event_type: 'memory_uploaded',
-    section:    'memories',
-    metadata:   {
-      file_size_kb: Math.round(processed.size / 1024),
-      width:        processed.info.width,
-      height:       processed.info.height,
-    },
-    ip_hash: req.ipHash || null,
-  }).catch(e => console.warn('[Analytics] memory event failed:', e.message));
-
+  try {
+    await db.from('analytics_events').insert({
+        event_type: 'memory_uploaded',
+        section: 'memories',
+        metadata: {
+            file_size_kb: Math.round(processed.size / 1024),
+            width: processed.info.width,
+            height: processed.info.height,
+        },
+        ip_hash: req.ipHash || null,
+    });
+} catch (e) {
+    console.warn('[Analytics] Memory event failed:', e.message);
+}
   return ok(res, {
     id:         memory.id,
     publicUrl:  memory.public_url,
