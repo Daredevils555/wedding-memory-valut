@@ -14,10 +14,13 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
+    "@vercel/analytics": "^2.0.1",
     "sharp": "^0.33.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.6.0",
     "vercel": "^33.0.0"
   }
 }
